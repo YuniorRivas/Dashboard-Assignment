@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media USA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, html {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+.card {
+    background-color: #fff;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+.card-content {
+    padding: 20px;
+}
+.card-content h2 {
+    margin-bottom: 10px; /* Adjust this value as needed */
+}
+.description-padding {
+    padding: 0 40px;
+    font-size: 16px;
+}
+.demographic-box {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px -20px;
+}
+.demographic-box > div {
+    flex: 1;
+    margin: 0 10px;
+    padding: 10px;
+    background-color: #f3f4f6;
+    text-align: center;
+    border-radius: 8px;
+}
+
+/* Updated Styles */
+.main-title {
+    font-size: 2.5rem; /* Increased title size */
+    text-align: center;
+    font-weight: bold; /* Adjusted for visibility */
+    color: #000;
+    margin-bottom: 20px; /* Increased space */
+}
+
+.sub-title {
+    font-size: 1.5rem; /* Adjusted sub-title size for consistency */
+    text-align: center;
+    font-weight: 600; /* Adjusted for visibility */
+    color: #000;
+    margin-bottom: 20px;
+}
+
+/* New styles for the select menu */
+.label-title {
+    font-size: 1.25rem; /* Increased label title */
+    font-weight: 600;
+    text-align: center;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.select-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.select-style {
+    width: 75%; /* Adjusted width for smaller select menu */
+    padding: 0.5rem 1rem;
+    background-color: #2563eb; /* Light blue background */
+    color: #ffffff; /* Darker blue text color */
+    border: 2px solid #2563eb; /* Blue border */
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+.select-style option {
+    background-color: #1d4ed8; /* Consistent light blue background for options */
+    color: #1d4ed8
+}
+
+.demographic-link {
+    color: #6B7280; /* A lighter shade of gray */
+    text-align: center;
+    margin-top: 10px; /* Adds space above the link for separation */
+    font-size: 14px; /* Slightly smaller font size */
+    cursor: pointer; /* Changes the cursor to a pointer to indicate it's clickable */
+}
+
+.card-youtube { border-top: 10px solid #ed1e24 /* Red for YouTube */ }
+.card-facebook { border-top: 10px solid #0865fe; /* Facebook Blue */ }
+.card-instagram { border-top: 10px solid #cc0de6; /* Instagram Gradient Start */ }
+.card-pinterest { border-top: 10px solid #e70023; /* Pinterest Red */ }
+.card-tiktok { border-top: 10px solid #27f5ed; /* TikTok Black */ }
+.card-linkedin { border-top: 10px solid #0a66c2; /* LinkedIn Blue */ }
+.card-whatsapp { border-top: 10px solid #1bc839; /* WhatsApp Green */ }
+.card-snapchat { border-top: 10px solid #fffd01; /* Snapchat Yellow */ }
+.card-x { border-top: 10px solid #040404; /* X (Twitter) Blue */ }
+.card-reddit { border-top: 10px solid #ff4400; /* Reddit Orange */ }
+
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <h1 class="main-title">The 10 Most Used Social Media Platforms in the U.S.</h1>
+        <h2 class="sub-title">320.6 million people in the U.S. are social media users</h2>
+
+<div class="flex justify-center mb-4">
+
+
+<div class="text-center mx-10">
+        <label for="functionalityFilter" class="label-title text-gray-900 dark:text-gray-400">Filter by Primary Function</label>
+        <div class="select-container">
+            <select id="functionalityFilter" class="select-style">
+                <option value="all">All</option>
+                <option value="networking">Social Networking</option>
+                <option value="content">Content Distribution</option>
+                <option value="messaging">Instant Messaging</option>
+                <option value="discussion">Public Discussion</option>
+            </select>
+        </div>
+    </div>
+
+<div class="text-center mx-10">
+        <label for="mainContentFilter" class="label-title text-gray-900 dark:text-gray-400">Filter by Content Type</label>
+        <div class="select-container">
+            <select id="mainContentFilter" class="select-style">
+                <option value="all">All</option>
+                <option value="text">Text-Based</option>
+                <option value="image">Image-Based</option>
+                <option value="video">Video-Based</option>
+                <option value="multimedia">Multimedia</option>
+            </select>
+        </div>
+    </div>
+
+<div class="text-center mx-10">
+        <label for="targetAudienceFilter" class="label-title text-gray-900 dark:text-gray-400">Filter by Target Audience</label>
+        <div class="select-container">
+            <select id="targetAudienceFilter" class="select-style">
+                <option value="all">All</option>
+                <option value="broad">Broad Appeal</option>
+                <option value="youth">Youth Centric</option>
+                <option value="professional">Professionals</option>
+                <option value="special">Special Interest</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+
+<!-- Youtube -->
+<div class="card bg-white p-4 rounded-lg shadow-lg card-youtube" id="card1" data-category="video" data-functionality="content" data-audience="broad">
+    <div class="card-content">
+        <div class="flex flex-col items-center mb-4">
+            <h2 class="text-4xl font-bold mb-2">YouTube</h2>
+            <img src="images/Youtube Logo.jpg" alt="Youtube Logo" class="w-24 h-24 rounded-lg">
+        </div>
+        <div class="flex justify-between mb-4">
+        <div class="bg-gray-200 p-6 rounded w-full text-center text-3xl font-semibold"> 
+                <strong>83% of U.S. adults use Youtube</strong>
+                <p class="demographic-link">Click for Demographic Breakdown</p>
+            </div>
+        </div>
+        <ul class="list-disc description-padding">
+            <li>Owned by Alphabet Inc.</li>
+            <li>Founded in 2005</li>
+            <li>YouTube is a video-sharing platform offering a vast array of content, from user-generated videos to professional productions.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Facebook -->
+<div class="card bg-white p-4 rounded-lg shadow-lg card-facebook" id="card2" data-category="multimedia" data-functionality="networking" data-audience="broad">
+    <div class="card-content">
+        <div class="flex flex-col items-center mb-4">
+            <h2 class="text-4xl font-bold mb-2">Facebook</h2>
+            <img src="images/Facebook Logo.png" alt="Facebook Logo" class="w-24 h-24 rounded-lg">
+        </div>
+        <div class="flex justify-center mb-4">
+<div class="bg-gray-200 p-6 rounded w-full text-center text-3xl font-semibold"> 
+                <strong>68% of U.S. adults use Facebook</strong>
+                <p class="demographic-link">Click for Demographic Breakdown</p>
+            </div>
+        </div>
+        <ul class="list-disc description-padding">
+            <li>Owned by Meta, Inc.</li>
+            <li>Founded in 2009</li>
+            <li>Facebook is a social networking platform where users can connect with friends and family, share photos and life updates.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Instagram -->
+<div class="card bg-white p-4 rounded-lg shadow-lg card-instagram" id="card3" data-category="multimedia" data-functionality="content" data-audience="youth">
+    <div class="card-content">
+        <div class="flex flex-col items-center mb-4">
+            <h2 class="text-4xl font-bold mb-2">Instagram</h2>
+            <img src="images/Instagram Logo.png" alt="Instagram Logo" class="w-24 h-24 rounded-lg">
+        </div>
+        <div class="flex justify-between mb-4">
+        <div class="bg-gray-200 p-6 rounded w-full text-center text-3xl font-semibold"> 
+                <strong>47% of U.S. adults use Instagram</strong>
+                <p class="demographic-link">Click for Demographic Breakdown</p>
+            </div>
+        </div>
+        <ul class="list-disc description-padding">
+            <li>Owned by Meta, Inc.</li>
+            <li>Launched in 2010</li>
+            <li>Instagram is a photo and video sharing social networking service, known for its Stories feature, filters, and interactive tools.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Pinterest -->
+<div class="card bg-white p-4 rounded-lg shadow-lg card-pinterest" id="card4" data-category="image" data-functionality="content" data-audience="special">
+    <div class="card-content">
+        <div class="flex flex-col items-center mb-4">
+            <h2 class="text-4xl font-bold mb-2">Pinterest</h2>
+            <img src="images/Pinterest Logo.png" alt="Pinterest Logo" class="w-24 h-24 rounded-lg">
+        </div>
+        <div class="flex justify-between mb-4">
+        <div class="bg-gray-200 p-6 rounded w-full text-center text-3xl font-semibold"> 
+                <strong>35% of U.S. adults use Pinterest</strong>
+                <p class="demographic-link">Click for Demographic Breakdown</p>
+            </div>
+        </div>
+        <ul class="list-disc description-padding">
+            <li>Owned by Pinterest, Inc.</li>
+            <li>Founded in 2009</li>
+            <li>Pinterest is a visual discovery engine where users can find inspiration for various interests, from recipes to home decor.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- TikTok -->
+<div class="card bg-white p-4 rounded-lg shadow-lg card-tiktok" id="card5" data-category="video" data-functionality="content" data-audience="youth">
+    <div class="card-content">
+        <div class="flex flex-col items-center mb-4">
+            <h2 class="text-4xl font-bold mb-2">TikTok</h2>
+            <img src="images/TikTok Logo.png" alt="TikTok Logo" class="w-24 h-24 rounded-lg">
+        </div>
+        <div class="flex justify-between mb-4">
+        <div class="bg-gray-200 p-6 rounded w-full text-center text-3xl font-semibold"> 
+                <strong>33% of U.S. adults use TikTok</strong>
+                <p class="demographic-link">Click for Demographic Breakdown</p>
+            </div>
+        </div>
+        <ul class="list-disc description-padding">
+            <li>Owned by ByteDance Ltd.</li>
+            <li>Founded in 2016</li>
+            <li>TikTok is a platform for creating and sharing short-form videos, with music integration and algorithm-driven content discovery.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- LinkedIn -->
+<div class="card bg-white p-4 rounded-lg shadow-lg card-linkedin" id="card6" data-category="text" data-functionality="networking" data-audience="professional">
+    <div class="card-content">
+        <div class="flex flex-col items-center mb-4">
+            <h2 class="text-4xl font-bold mb-2">LinkedIn</h2>
+            <img src="images/LinkedIn Logo.png" alt="LinkedIn Logo" class="w-24 h-24 rounded-lg">
+        </div>
+        <div class="flex justify-between mb-4">
+        <div class="bg-gray-200 p-6 rounded w-full text-center text-3xl font-semibold"> 
+                <strong>30% of U.S. adults use LinkedIn</strong>
+                <p class="demographic-link">Click for Demographic Breakdown</p>
+            </div>
+        </div>
+        <ul class="list-disc description-padding">
+            <li>Owned by Microsoft</li>
+            <li>Founded in 2002</li>
+            <li>LinkedIn is a professional networking platform where users can connect with colleagues and share industry insights.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- WhatsApp -->
+<div class="card bg-white p-4 rounded-lg shadow-lg card-whatsapp" id="card7" data-category="text" data-functionality="messaging" data-audience="broad">
+    <div class="card-content">
+        <div class="flex flex-col items-center mb-4">
+            <h2 class="text-4xl font-bold mb-2">WhatsApp</h2>
+            <img src="images/WhatsApp Logo.png" alt="WhatsApp Logo" class="w-24 h-24 rounded-lg">
+        </div>
+        <div class="flex justify-between mb-4">
+        <div class="bg-gray-200 p-6 rounded w-full text-center text-3xl font-semibold"> 
+                <strong>29% of U.S. adults use WhatsApp</strong>
+                <p class="demographic-link">Click for Demographic Breakdown</p>
+            </div>
+        </div>
+        <ul class="list-disc description-padding">
+            <li>Owned by Meta, Inc.</li>
+            <li>Founded in 2009</li>
+            <li>WhatsApp is a messaging platform that provides end-to-end encrypted text, voice, and video sharing.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Snapchat -->
+<div class="card bg-white p-4 rounded-lg shadow-lg card-snapchat" id="card8" data-category="image" data-functionality="messaging" data-audience="youth">
+    <div class="card-content">
+        <div class="flex flex-col items-center mb-4">
+            <h2 class="text-4xl font-bold mb-2">Snapchat</h2>
+            <img src="images/Snapchat Logo.png" alt="Snapchat Logo" class="w-24 h-24 rounded-lg">
+        </div>
+        <div class="flex justify-between mb-4">
+        <div class="bg-gray-200 p-6 rounded w-full text-center text-3xl font-semibold"> 
+                <strong>27% of U.S. adults use Snapchat</strong>
+                <p class="demographic-link">Click for Demographic Breakdown</p>
+            </div>
+        </div>
+        <ul class="list-disc description-padding">
+            <li>Owned by Snap Inc.</li>
+            <li>Founded in 2011</li>
+            <li>Snapchat is a multimedia messaging app known for ephemeral content, filters, and augmented reality features.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- X (Formerly Twitter) -->
+<div class="card bg-white p-4 rounded-lg shadow-lg card-x" id="card9" data-category="multimedia" data-functionality="discussion" data-audience="professional">
+    <div class="card-content">
+        <div class="flex flex-col items-center mb-4">
+            <h2 class="text-4xl font-bold mb-2">X (Formerly Twitter)</h2>
+            <img src="images/X Logo.png" alt="X Logo" class="w-24 h-24 rounded-lg">
+        </div>
+        <div class="flex justify-between mb-4">
+        <div class="bg-gray-200 p-6 rounded w-full text-center text-3xl font-semibold"> 
+                <strong>22% of U.S. adults use X (Twitter)</strong>
+                <p class="demographic-link">Click for Demographic Breakdown</p>
+            </div>
+        </div>
+        <ul class="list-disc description-padding">
+            <li>Owned by X Corp.</li>
+            <li>Founded in 2006</li>
+            <li>X (Formerly Twitter) is a microblogging platform for sharing brief updates, news, and opinions.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Reddit -->
+<div class="card bg-white p-4 rounded-lg shadow-lg card-reddit" id="card10" data-category="text" data-functionality="discussion" data-audience="special">
+    <div class="card-content">
+        <div class="flex flex-col items-center mb-4">
+            <h2 class="text-4xl font-bold mb-2">Reddit</h2>
+            <img src="images/Reddit Logo.png" alt="Reddit Logo" class="w-24 h-24 rounded-lg">
+        </div>
+        <div class="flex justify-between mb-4">
+        <div class="bg-gray-200 p-6 rounded w-full text-center text-3xl font-semibold"> 
+                <strong>22% of U.S. adults use Reddit</strong>
+                <p class="demographic-link">Click for Demographic Breakdown</p>
+            </div>
+        </div>
+        <ul class="list-disc description-padding">
+            <li>Owned by Reddit, Inc.</li>
+            <li>Founded in 2005</li>
+            <li>Reddit is a community-driven platform with forums on a wide array of topics, from news to hobbies.</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const mainContentFilter = document.getElementById('mainContentFilter');
+    const functionalityFilter = document.getElementById('functionalityFilter');
+    const targetAudienceFilter = document.getElementById('targetAudienceFilter');
+    
+    function resetOtherFilters(currentFilter) {
+        // Reset all filters to 'all' except the current one
+        [mainContentFilter, functionalityFilter, targetAudienceFilter].forEach(filter => {
+            if (filter !== currentFilter) {
+                filter.value = 'all';
+            }
+        });
+    }
+
+    function filterCards() {
+        const contentValue = mainContentFilter.value;
+        const functionalityValue = functionalityFilter.value;
+        const targetAudienceValue = targetAudienceFilter.value;
+        
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            const contentMatch = contentValue === 'all' || card.getAttribute('data-category') === contentValue;
+            const functionalityMatch = functionalityValue === 'all' || card.getAttribute('data-functionality') === functionalityValue;
+            const targetAudienceMatch = targetAudienceValue === 'all' || card.getAttribute('data-audience') === targetAudienceValue;
+            
+            if (contentMatch && functionalityMatch && targetAudienceMatch) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    // Event listeners for each filter
+    mainContentFilter.addEventListener('change', function() {
+        resetOtherFilters(this); // 'this' refers to mainContentFilter
+        filterCards(); // Apply filter after resetting others
+    });
+    
+    functionalityFilter.addEventListener('change', function() {
+        resetOtherFilters(this); // 'this' refers to functionalityFilter
+        filterCards(); // Apply filter after resetting others
+    });
+    
+    targetAudienceFilter.addEventListener('change', function() {
+        resetOtherFilters(this); // 'this' refers to targetAudienceFilter
+        filterCards(); // Apply filter after resetting others
+    });
+});
+</script>
